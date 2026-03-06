@@ -1,4 +1,5 @@
-// win_player.c
+// github.com/gogeekery
+// win_main.c
 // Compile: cl /O2 /MD /Fe:avr_player.exe win_main.c winmm.lib
 // or: gcc -O2 -o avr_player.exe win_main.c -lwinmm
 
@@ -245,3 +246,4 @@ int main(void) {
     printf("Stopped.\n");
     return 0;
 }
+

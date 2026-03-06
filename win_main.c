@@ -19,10 +19,12 @@
 // Include songs:
 #include "songs/spiritedaway_itsumo.h"
 #include "songs/castle.h"
+#include "songs/mymusic.h"
 
 const uint8_t (*songs[])[][3] = {
-    //&spiritedaway_itsumo
-    &castle
+    &spiritedaway_itsumo
+    //&castle
+    //&mymusic
 };
 
 
@@ -48,13 +50,6 @@ static int32_t note_index = -1;
 static uint16_t delay_ticks = 1;
 static int32_t song_index = 0;
 static int running = 1;
-
-// Forward declarations for song data from your headers:
-// - notes_add[] (uint16_t array)
-// - waveform[64] (uint8_t array)
-// - envelope[128] (uint8_t array)
-// - songs[] (pointer to arrays of triplets)
-// These are provided by data.h and the song header you included.
 
 // Helper: read 16-bit little-endian word from song triplet bytes 1..2
 static inline uint16_t read_song_word(const uint8_t triplet[3]) {
@@ -216,7 +211,7 @@ DWORD WINAPI audio_thread(LPVOID param) {
 }
 
 int main(void) {
-    printf("AVR audio player starting. Press Enter to stop.\n");
+    printf("Audio player starting. Press Enter to stop.\n");
 
     // Initialize channel states like AVR main()
     for (int i = 0; i < NUM_CHANNELS; ++i) {
@@ -246,4 +241,3 @@ int main(void) {
     printf("Stopped.\n");
     return 0;
 }
-

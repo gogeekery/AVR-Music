@@ -87,7 +87,7 @@ avrdude -c <programmer> -p m328p -U flash:w:main.hex:i
 ### Build the Windows Player
 
 ```
-gcc -O2 -o win_player.exe win_player.c -lwinmm
+gcc -O2 -o win_player.exe win_main.c -lwinmm
 ```
 
 ---
